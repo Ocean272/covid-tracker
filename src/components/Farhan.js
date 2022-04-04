@@ -1,22 +1,26 @@
-import React from 'react'
+import React from "react";
 
-const Farhan = ({data}) => {
+const Farhan = ({ data }) => {
   return (
     <>
-    <h3>Vaccination Status by Age</h3>
+      <h3>Vaccination Status by Age</h3>
+      <form>
+        <input type="text" placeholder="Search for date" />
+        <button>Search</button>
+      </form>
       {data.map((v) => {
         return (
           <div key={v._id}>
             <p>completed full regimen : {v.completed_full_regimen}</p>
             <p>Age Group : {v.age}</p>
-            <p>Unvaccinated : {v.unvaccinated}</p>
+            
             <p>At least one dose : {v.at_least_one_dose}</p>
             <br />
           </div>
         );
       })}
     </>
-  )
-}
+  );
+};
 
-export default Farhan
+export default Farhan;
