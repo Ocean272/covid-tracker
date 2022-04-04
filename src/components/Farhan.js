@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const Farhan = ({data}) => {
+const Farhan = ({ data }) => {
   return (
     <>
-    <h3>Vaccination Status by Age</h3>
+      <h3>Vaccination Status by Age</h3>
+      <form>
+        <button>Search</button>
+      </form>
       {data.map((v) => {
         return (
           <div key={v._id}>
@@ -16,7 +19,7 @@ const Farhan = ({data}) => {
         );
       })}
     </>
-  )
-}
+  );
+};
 
-export default Farhan
+export default Farhan;
