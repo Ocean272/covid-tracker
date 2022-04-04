@@ -12,7 +12,7 @@ const Farhan = ({ data }) => {
           <div key={v._id}>
             <p>completed full regimen : {v.completed_full_regimen}</p>
             <p>Age Group : {v.age}</p>
-            <p>Unvaccinated : {v.unvaccinated}</p>
+            
             <p>At least one dose : {v.at_least_one_dose}</p>
             <br />
           </div>
