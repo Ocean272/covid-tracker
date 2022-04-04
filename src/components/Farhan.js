@@ -4,6 +4,7 @@ const Farhan = ({ data }) => {
   return (
     <>
       <h3>Vaccination Status by Age</h3>
+      <h4>Search for date</h4>
       <form>
         <button>Search</button>
       </form>
