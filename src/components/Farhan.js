@@ -5,6 +5,7 @@ const Farhan = ({ data }) => {
     <>
       <h3>Vaccination Status by Age</h3>
       <form>
+        <input type="text" placeholder="Search for date" />
         <button>Search</button>
       </form>
       {data.map((v) => {
