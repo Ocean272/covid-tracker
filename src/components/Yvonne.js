@@ -9,13 +9,13 @@ const Yvonne = ({data}) => {
 
   function search(data) {
     return data.filter((item) => {
-      if (item.pr_date == filterParam) {
+      if (item.pr_date === filterParam) {
         return searchParamLC.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(r.toLowerCase()) > -1
           );
         });
-      } else if (filterParam == "All") {
+      } else if (filterParam === "All") {
         return searchParamLC.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(r.toLowerCase()) > -1
