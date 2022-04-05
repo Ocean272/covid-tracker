@@ -9,13 +9,13 @@ const Daniel = ({ data }) => {
 
   function search(data) {
     return data.filter((item) => {
-      if (item.as_of_date === filterParamBed) {
+      if (item.as_of_date == filterParamBed) {
         return searchParamBed.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(b.toLowerCase()) > -1
           );
         });
-      } else if (filterParamBed === "All") {
+      } else if (filterParamBed == "All") {
         return searchParamBed.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(b.toLowerCase()) > -1
@@ -35,7 +35,7 @@ const Daniel = ({ data }) => {
               name="search-form"
               id="search-form"
               className="search-input"
-              placeholder="DD-MM-YY"
+              placeholder="DD/MM/YY"
               value={b}
               onChange={(e) => setB(e.target.value)}
             />
