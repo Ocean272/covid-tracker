@@ -9,8 +9,7 @@ import Daniel from "./Daniel";
 
 function Amy() {
   const [localCase, setLocalCase] = useState([]);
-  const [isDisplayed, setIsDisplayed] = useState(true);
-  
+   
   // const [r, setR] = useState("");
   // const [searchParamLC] = useState(["pr_date"]);
   // const [filterParam, setFilterParam] = useState(["All"]);
@@ -31,9 +30,7 @@ function Amy() {
     getAsyncData1();
   }, []);
 
-  toggleShowHide = () => {
-    setIsDisplayed(isDisplayed => ({ isDisplayed: !isDisplayed}));
-  }
+
 
 
   // function search(localCase) {
@@ -135,7 +132,7 @@ function Amy() {
       
       <Daniel data={util} />
       <Farhan data={vac} />
-      <Yvonne data={localCase} tryUpdate={isDisplayed}/>
+      <Yvonne data={localCase} />
       <Alex data={icu} />
       </div>
     </>

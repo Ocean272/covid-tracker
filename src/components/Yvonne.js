@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-//import { BasePlatform } from 'chart.js';
 
-const Yvonne = ({data , tryUpdate}) => {
+
+const Yvonne = ({data}) => {
 
   const [r, setR] = useState("");
   const [searchParamLC] = useState(["pr_date"]);
@@ -42,9 +42,6 @@ const Yvonne = ({data , tryUpdate}) => {
             onChange={(e) => setR(e.target.value)}
           />
         </label>
-        <button onClick={tryUpdate}>
-          Toggle Show/Hide
-        </button>
       </div>
       <span> Search Date</span>
       <label
