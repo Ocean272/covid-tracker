@@ -35,7 +35,7 @@ const Daniel = ({ data }) => {
               name="search-form"
               id="search-form"
               className="search-input"
-              placeholder="DD-MM-YY"
+              placeholder="DD/MM/YY"
               value={b}
               onChange={(e) => setB(e.target.value)}
             />
