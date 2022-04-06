@@ -52,7 +52,7 @@ function Home() {
 }
 
 function About() {
-  return <h2><Yvonne /></h2>;;
+  return <h2><Yvonne /></h2>;
 }
 
 function Users() {
