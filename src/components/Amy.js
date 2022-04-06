@@ -5,11 +5,10 @@ import Alex from "./Alex";
 import Yvonne from "./Yvonne";
 import Farhan from "./Farhan";
 import Daniel from "./Daniel";
-
+import '../App.css';
 
 function Amy() {
   const [localCase, setLocalCase] = useState([]);
-  const [isDisplayed, setIsDisplayed] = useState(true);
   
   // const [r, setR] = useState("");
   // const [searchParamLC] = useState(["pr_date"]);
@@ -32,9 +31,6 @@ function Amy() {
     getAsyncData1();
   }, []);
 
-  toggleShowHide = () => {
-    setIsDisplayed(isDisplayed => ({ isDisplayed: !isDisplayed}));
-  }
 
 
   // function search(localCase) {
@@ -131,7 +127,7 @@ function Amy() {
       
       <Daniel data={util} />
       <Farhan data={vac} />
-      <Yvonne data={localCase} tryUpdate={isDisplayed}/>
+      <Yvonne data={localCase} />
       <Alex data={icu} />
       </div>
     </>
