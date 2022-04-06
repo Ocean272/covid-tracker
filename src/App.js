@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Yvonne from "./components/Yvonne";
-import Amy from "./components/Amy";
 import Farhan from "../src/components/Farhan.js";
-import AlexContainer from "./components/alex-container";
 import Daniel from "./components/Daniel";
 import API from "./screens/API";
 import Alex from "./components/Alex";
 
+/*
+  App.js responsibilities:
+  1. Data polling and pass filtered data to children component
+  2. Routing defined
+*/  
 function App() {
 
   const [localCase,setLocalCase] = useState([]);
