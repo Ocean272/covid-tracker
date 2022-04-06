@@ -14,7 +14,6 @@ function Amy() {
   const [vac, setVac] = useState([]);
   const [icu, setIcu] = useState([]);
   const [util, setUtil] = useState([]);
- 
 
   const getAsyncData1 = async () => {
     const resp = await API.get(
@@ -48,38 +47,43 @@ function Amy() {
   // }
 
   const getAsyncData2 = async () => {
-    const resp = await API.get("/api/action/datastore_search?resource_id=9ec89dc0-cb6b-4604-aaff-382d5e850206");
+    const resp = await API.get(
+      "/api/action/datastore_search?resource_id=9ec89dc0-cb6b-4604-aaff-382d5e850206"
+    );
     if (resp.status === 200) {
       console.log(resp);
       setVac(resp.data.result.records);
     }
-  }
-    useEffect(() =>{
-      getAsyncData2();
-    }, []);
- 
+  };
+  useEffect(() => {
+    getAsyncData2();
+  }, []);
 
   const getAsyncData3 = async () => {
-    const resp = await API.get("/api/action/datastore_search?resource_id=783f0c4c-caf7-4818-8683-760f3d7f0757");
+    const resp = await API.get(
+      "/api/action/datastore_search?resource_id=783f0c4c-caf7-4818-8683-760f3d7f0757"
+    );
     if (resp.status === 200) {
       console.log(resp);
       setIcu(resp.data.result.records);
     }
-  }
-    useEffect(() =>{
-      getAsyncData3();
-    }, []);
+  };
+  useEffect(() => {
+    getAsyncData3();
+  }, []);
 
   const getAsyncData4 = async () => {
-    const resp = await API.get("/api/action/datastore_search?resource_id=b5ae6ad5-1272-41f4-a4e5-23308ad6e32d");
+    const resp = await API.get(
+      "/api/action/datastore_search?resource_id=b5ae6ad5-1272-41f4-a4e5-23308ad6e32d"
+    );
     if (resp.status === 200) {
       console.log(resp);
       setUtil(resp.data.result.records);
     }
-  }
-    useEffect(() =>{
-      getAsyncData4();
-    }, []);
+  };
+  useEffect(() => {
+    getAsyncData4();
+  }, []);
 
 
 
