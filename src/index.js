@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Amy from '../src/screens/Amy';
+import HomePage from './screens/HomePage';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import App from './App.js'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Amy />
+    <BrowserRouter>
+    <HomePage />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
