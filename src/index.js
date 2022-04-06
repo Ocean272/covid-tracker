@@ -4,17 +4,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import Amy from '../src/components/Amy';
 import App from './App';
+import HomePage from './screens/HomePage';
 import reportWebVitals from './reportWebVitals';
-
-
+import { BrowserRouter } from "react-router-dom";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    
     <App />
-    
-    
+    <BrowserRouter>
+    <HomePage />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
