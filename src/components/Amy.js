@@ -81,6 +81,8 @@ function Amy() {
       getAsyncData4();
     }, []);
 
+
+
   return (
     <>
       <h2>Covid</h2>

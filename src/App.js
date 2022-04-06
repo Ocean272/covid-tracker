@@ -20,7 +20,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/Yvonne">Yvonne</Link>
+              <Link to="/about">Yvonne</Link>
             </li>
             <li>
               <Link to="/users">Users</Link>
@@ -31,8 +31,8 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/Yvonne">
-            <Yvonne />
+          <Route path="/about">
+            <About/>
           </Route>
           <Route path="/users">
             <Users />
@@ -52,7 +52,7 @@ function Home() {
 }
 
 function About() {
-  return <Yvonne />;
+  return <h2><Yvonne /></h2>;
 }
 
 function Users() {
