@@ -6,8 +6,11 @@ import Yvonne from "./Yvonne";
 import Farhan from "./Farhan";
 import Daniel from "./Daniel";
 
+
 function Amy() {
   const [localCase, setLocalCase] = useState([]);
+  const [isDisplayed, setIsDisplayed] = useState(true);
+  
   // const [r, setR] = useState("");
   // const [searchParamLC] = useState(["pr_date"]);
   // const [filterParam, setFilterParam] = useState(["All"]);
@@ -27,6 +30,11 @@ function Amy() {
   useEffect(() => {
     getAsyncData1();
   }, []);
+
+  toggleShowHide = () => {
+    setIsDisplayed(isDisplayed => ({ isDisplayed: !isDisplayed}));
+  }
+
 
   // function search(localCase) {
   //   return localCase.filter((item) => {
@@ -89,7 +97,7 @@ function Amy() {
 
   return (
     <>
-      <h2>Covid</h2>
+      <h2>Covid Cases</h2>
       <div className="wrapper">
         {/* <label htmlFor="search-form">
           <input
@@ -124,11 +132,12 @@ function Amy() {
             </div>
           );
         })} */}
-      </div>
+      
       <Daniel data={util} />
       <Farhan data={vac} />
-      <Yvonne data={localCase} />
+      <Yvonne data={localCase} tryUpdate={isDisplayed}/>
       <Alex data={icu} />
+      </div>
     </>
   );
 }
