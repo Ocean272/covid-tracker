@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const Farhan = ({ data }) => {
-
   const [v, setV] = useState("");
   const [searchParamVac] = useState(["age"]);
   const [filterParamV, setFilterParamV] = useState(["All"]);
@@ -25,34 +24,33 @@ const Farhan = ({ data }) => {
     });
   }
 
-
   return (
     <>
       <h2>Number of Vaccinated people based on Age Group</h2>
       <div>
         <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="Enter Age"
-              value={v}
-              onChange={(e) => setV(e.target.value)}
-            />
-          </label>
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="Enter Age"
+            value={v}
+            onChange={(e) => setV(e.target.value)}
+          />
+        </label>
       </div>
       <span> Search Age</span>
-        <label
-          onChange={(e) => {
-            setFilterParamV(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
-        </label>
+      <label
+        onChange={(e) => {
+          setFilterParamV(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
       <div>
-          {search(data).map((v) => {
+        {search(data).map((v) => {
           return (
             <div key={v._id}>
               <p>completed full regimen : {v.completed_full_regimen}</p>
@@ -60,9 +58,9 @@ const Farhan = ({ data }) => {
               <p>unvaccinated : {v.unvaccinated}</p>
               <p>At least one dose : {v.at_least_one_dose}</p>
               <br />
-              </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </div>
       {/* <form>
         <input type="text" placeholder="Search for date" />
