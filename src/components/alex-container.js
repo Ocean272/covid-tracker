@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Alex from "./componentsTwo/AlexTwo";
+import Alex from "../componentsTwo/AlexTwo";
 
 function AlexContainer() {
   const [query, setQuery] = useState ("");

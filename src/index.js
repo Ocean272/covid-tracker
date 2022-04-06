@@ -12,9 +12,9 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <HomePage />
-    </BrowserRouter>
+    </BrowserRouter> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
