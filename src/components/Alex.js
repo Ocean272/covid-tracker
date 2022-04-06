@@ -9,13 +9,13 @@ const Alex = ({data}) => {
 
   function search(data) {
     return data.filter((item) => {
-      if (item.as_of_date === filterParamI) {
+      if (item.as_of_date == filterParamI) {
         return searchParamI.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(i.toLowerCase()) > -1
           );
         });
-      } else if (filterParamI === "All") {
+      } else if (filterParamI == "All") {
         return searchParamI.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(i.toLowerCase()) > -1

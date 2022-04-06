@@ -8,13 +8,13 @@ const Farhan = ({ data }) => {
 
   function search(data) {
     return data.filter((item) => {
-      if (item.age === filterParamV) {
+      if (item.age == filterParamV) {
         return searchParamVac.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(v.toLowerCase()) > -1
           );
         });
-      } else if (filterParamV === "All") {
+      } else if (filterParamV == "All") {
         return searchParamVac.some((newItem) => {
           return (
             item[newItem].toString().toLowerCase().indexOf(v.toLowerCase()) > -1
