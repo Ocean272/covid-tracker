@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import API from "../screens/API";
-import Alex from "./Alex";
-import Yvonne from "./Yvonne";
-import Farhan from "./Farhan";
-import Daniel from "./Daniel";
-import '../App.css';
+import API from "./API";
+import Alex from "../components/Alex";
+import Yvonne from "../components/Yvonne";
+import Farhan from "../components/Farhan";
+import Daniel from "../components/Daniel";
+
 
 function Amy() {
   const [localCase, setLocalCase] = useState([]);

@@ -25,6 +25,8 @@ const Yvonne = ({data}) => {
       }
     });
   }
+
+  
       
   return (
     <>

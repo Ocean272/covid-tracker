@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import Amy from '../src/components/Amy';
-import App from './App';
+import Amy from './screens/Amy';
 import reportWebVitals from './reportWebVitals';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    
-    <App />
-    
-    
+    <Amy />
+     
   </React.StrictMode>,
   document.getElementById('root')
 );
