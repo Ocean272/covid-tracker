@@ -66,28 +66,25 @@ function App() {
   };
   
 
-
   return (
     <div className="App-header">
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
+      <div class="tab-selection">
+            <div>Covid-19</div>
+              <div>
                 <Link to="/">Home (Cases)</Link>
-              </li>
-              <li>
+              </div>
+              <div>
                 <Link to="/Farhan">Vaccination status</Link>
-              </li>
-              <li>
+              </div>
+              <div>
                 <Link to="/hospitalbed">Hospital Bed</Link>
-              </li>
-              <li>
+              </div>
+              <div>
                 <Link to="/icu">ICU</Link>
-              </li> 
-            </ul>
-          </nav>
-
+              </div> 
+            </div>
+          <p class="tab-container">
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>        
@@ -104,7 +101,7 @@ function App() {
             <Yvonne data={localCase} />
             </Route> 
           </Switch>
-        </div>
+        </p>
       </Router>
     </div>
   )
