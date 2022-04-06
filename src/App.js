@@ -64,7 +64,7 @@ function Vaccinated() {
 }
 
 function About() {
-  return <Yvonne />;
+  return <h2><Yvonne /></h2>;
 }
 
 function Users() {
