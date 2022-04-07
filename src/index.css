@@ -1,11 +1,9 @@
-
 :root {
   --clr-primary: rgb(52, 113, 150);
   --clr-light: #f4f4f4;
   --clr-dark: black;
   --clr-warning: rgb(103, 36, 36);
 }
-
 
 body {
   margin: 0;
@@ -29,7 +27,6 @@ body {
   color: var(--clr-dark);
   padding-top: 45px;
   justify-content: space-evenly;
-
 }
 
 .tab-selection > div {
@@ -85,18 +82,17 @@ table,
 tr {
   background-color: orange;
   margin: 20px 20px;
-  width:100%;
+  width: 100%;
 }
 
 tr {
   background-color: beige;
-  width:fit-content;
+  width: fit-content;
 }
 
 td {
   height: 25px;
   vertical-align: center;
- 
 }
 
 label {
@@ -112,4 +108,3 @@ h3 {
   margin-left: 20px;
   margin-top: 50px;
 }
-
