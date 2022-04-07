@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
-const Alex = ({data}) => {
-
+const Alex = ({ data }) => {
   const [i, setI] = useState("");
   const [searchParamI] = useState(["as_of_date"]);
   const [filterParamI, setFilterParamI] = useState(["All"]);
@@ -24,45 +23,56 @@ const Alex = ({data}) => {
       }
     });
   }
-  
+
   return (
     <>
-    <h3>7 days active cases in ICU and deaths, based on Vaccination Status</h3>
-    <div>
+      <div>
         <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="YYYY-MM-DD"
-              value={i}
-              onChange={(e) => setI(e.target.value)}
-            />
-          </label>
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="YYYY-MM-DD"
+            value={i}
+            onChange={(e) => setI(e.target.value)}
+          />
+        </label>
       </div>
       <span> Enter Date</span>
-        <label
-          onChange={(e) => {
-            setFilterParamI(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
-        </label>
-      <div>
+      <label
+        onChange={(e) => {
+          setFilterParamI(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
+      <br />
+      <table>
+        <tbody>
+          <h3>
+            7 days active cases in ICU and deaths, based on Vaccination Status
+          </h3>
+          <tr>
+            <th>Count of Case</th>
+            <th>As of Date</th>
+            <th>Vaccination status</th>
+            <th>Clinical Status</th>
+          </tr>
           {search(data).map((i) => {
-          return (
-            <div key={i._id}>
-              <p>No of cases in percentage : {i.count_of_case}</p>
-              <p>Date : {i.as_of_date}</p>
-              <p>Vaccination status: {i.vaccination_status}</p>
-              <p>Health Status : {i.clinicalstatus}</p>
-              <br />
-              </div>
+            return (
+              <tr key={i._id}>
+                <td>No of cases in percentage : {i.count_of_case}</td>
+                <td>Date : {i.as_of_date}</td>
+                <td>Vaccination status: {i.vaccination_status}</td>
+                <td>Health Status : {i.clinicalstatus}</td>
+                <br />
+              </tr>
             );
           })}
-      </div>
+        </tbody>
+      </table>
       {/* {data.map((a) => {
         return (
           <div key={a._id}>
@@ -75,7 +85,7 @@ const Alex = ({data}) => {
         );
       })} */}
     </>
-  )
-}
+  );
+};
 
 export default Alex;
