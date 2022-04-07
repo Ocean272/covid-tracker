@@ -1,9 +1,9 @@
-import React from 'react'
-import { useState } from 'react';
 //import { BasePlatform } from 'chart.js';
 
-const Yvonne = ({data}) => {
+import React from "react";
+import { useState } from "react";
 
+const Yvonne = ({ data }) => {
   const [r, setR] = useState("");
   const [searchParamLC] = useState(["pr_date"]);
   const [filterParam, setFilterParam] = useState(["All"]);
@@ -25,12 +25,10 @@ const Yvonne = ({data}) => {
       }
     });
   }
-      
+
   return (
     <>
-    <h2>Number of Local Cases based on </h2>
-    <div className="wrapper">
-     
+      <div>
         <label htmlFor="search-form">
           <input
             type="search"
@@ -42,29 +40,36 @@ const Yvonne = ({data}) => {
             onChange={(e) => setR(e.target.value)}
           />
         </label>
-      </div>
-      <span> Search Date</span>
-      <label
-        onChange={(e) => {
-          setFilterParam(e.target.value);
-        }}
-        aria-label="Date"
-      >
-        <option value="All"></option>
-      </label>
-      <div>
 
-        {search(data).map((a) => {
-          return (
-            <div key={a._id}>
-              <p>Date : {a.pr_date}</p>
-              <p>Age group : {a.age_group}</p>
-              <p>No of cases : {a.count_of_case}</p>
-              <br />
-            </div>
-          );
-        })}
-         {/* <BasePlatform
+        <span> Search Date</span>
+        <label
+          onChange={(e) => {
+            setFilterParam(e.target.value);
+          }}
+          aria-label="Date"
+        >
+          <option value="All"></option>
+        </label>
+        <table>
+          <tbody>
+            <h3>Number of Local Cases based on </h3>
+            <tr>
+              <th>As of Date</th>
+              <th>Age Group</th>
+              <th>No. of Cases</th>
+            </tr>
+
+            {search(data).map((a) => {
+              return (
+                <tr key={a._id}>
+                  <td>Date : {a.pr_date}</td>
+                  <td>Age group : {a.age_group}</td>
+                  <td>No of cases : {a.count_of_case}</td>
+                  <br />
+                </tr>
+              );
+            })}
+            {/* <BasePlatform
         data={{
           labels: ["Red","Blue","Yellow","Green","Orange"],
           datasets: [
@@ -116,8 +121,8 @@ const Yvonne = ({data}) => {
           ]
         }}}
       /> */}
-      </div>
-      {/* {data.map((a) => {
+
+            {/* {data.map((a) => {
         return (
           <div key={a._id}>
             <p>Count of Case : {a.count_of_case}</p>
@@ -127,8 +132,11 @@ const Yvonne = ({data}) => {
           </div>
         );
       })} */}
+          </tbody>
+        </table>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Yvonne;

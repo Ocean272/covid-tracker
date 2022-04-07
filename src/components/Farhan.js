@@ -26,7 +26,6 @@ const Farhan = ({ data }) => {
 
   return (
     <>
-      <h2>Number of Vaccinated people based on Age Group</h2>
       <div>
         <label htmlFor="search-form">
           <input
@@ -49,20 +48,29 @@ const Farhan = ({ data }) => {
       >
         <option value="All"></option>
       </label>
-      <div>
-        {search(data).map((v) => {
-          return (
-            <div key={v._id}>
-              <p>completed full regimen : {v.completed_full_regimen}</p>
-              <p>Age Group : {v.age}</p>
-              <p>unvaccinated : {v.unvaccinated}</p>
-              <p>At least one dose : {v.at_least_one_dose}</p>
-              <br />
-            </div>
-          );
-        })}
-      </div>
-      {/* <form>
+      <table>
+        <tbody>
+          <h3>Number of Vaccinated people based on Age Group</h3>
+          <tr>
+            <th>Completed Full Regimen</th>
+            <th>Age Group</th>
+            <th>Unvaccinated</th>
+            <th>Atleast One Dose</th>
+          </tr>
+
+          {search(data).map((v) => {
+            return (
+              <tr key={v._id}>
+                <td>{v.completed_full_regimen}</td>
+                <td>{v.age}</td>
+                <td>{v.unvaccinated}</td>
+                <td>{v.at_least_one_dose}</td>
+                <br />
+              </tr>
+            );
+          })}
+
+          {/* <form>
         <input type="text" placeholder="Search for date" />
         <button>Search</button>
       </form>
@@ -77,6 +85,8 @@ const Farhan = ({ data }) => {
           </div>
         );
       })} */}
+        </tbody>
+      </table>
     </>
   );
 };

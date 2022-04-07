@@ -1,14 +1,75 @@
+:root {
+  --clr-primary: rgb(52, 113, 150);
+  --clr-light: #f4f4f4;
+  --clr-dark: black;
+  --clr-warning: rgb(103, 36, 36);
+}
+
 body {
-  text-align: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("../src/Assets/Images/pills_background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tab-selection {
+  display: flex;
+  border: none;
+  width: 100%;
+  height: 90px;
+  background-color: rgba(255, 254, 254, 0.246);
+  margin: auto;
+  color: var(--clr-dark);
+  padding-top: 45px;
+  justify-content: space-evenly;
+}
+
+.tab-selection > div {
+  border: none;
+  width: 1000px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+}
+
+.icons {
+  color: rgb(12, 8, 8);
+  text-decoration: none;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  cursor: pointer;
+  transition: opacity 100ms ease-in-out;
+}
+
+.icons:hover {
+  opacity: 70%;
+  color: var(--clr-primary);
+}
+
+a {
+  color: var(--clr-dark);
+  text-decoration: none;
+  font-size: 25px;
+  cursor: pointer;
+  transition: opacity 100ms ease-in-out;
+}
+
+a:hover {
+  opacity: 70%;
+  color: var(--clr-warning);
+}
+
+.current {
+  opacity: 100%;
+  color: var(--clr-warning);
+}
+
+p {
+  color: black;
 }
