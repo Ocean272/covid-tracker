@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Yvonne from "./components/Yvonne";
 import Farhan from "../src/components/Farhan.js";
@@ -10,10 +10,9 @@ import Alex from "./components/Alex";
   App.js responsibilities:
   1. Data polling and pass filtered data to children component
   2. Routing defined
-*/  
+*/
 function App() {
-
-  const [localCase,setLocalCase] = useState([]);
+  const [localCase, setLocalCase] = useState([]);
   const [vac, setVac] = useState([]);
   const [icu, setIcu] = useState([]);
   const [util, setUtil] = useState([]);
@@ -64,32 +63,31 @@ function App() {
       setUtil(resp.data.result.records);
     }
   };
-  
 
   return (
     <div className="App-header">
       <Router>
-      <div class="tab-selection">
-            <div>Covid-19</div>
-              <div>
-                <Link to="/">Home (Cases)</Link>
-              </div>
-              <div>
-                <Link to="/Farhan">Vaccination status</Link>
-              </div>
-              <div>
-                <Link to="/hospitalbed">Hospital Bed</Link>
-              </div>
-              <div>
-                <Link to="/icu">ICU</Link>
-              </div> 
-            </div>
-          <p class="tab-container">
+        <div class="tab-selection">
+          <div>Covid-19</div>
+          <div>
+            <Link to="/">Home (Cases)</Link>
+          </div>
+          <div>
+            <Link to="/Vaccinationstatus">Vaccination status</Link>
+          </div>
+          <div>
+            <Link to="/hospitalbed">Hospital Bed</Link>
+          </div>
+          <div>
+            <Link to="/icu">ICU</Link>
+          </div>
+        </div>
+        <p class="tab-container">
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-          <Switch>        
-            <Route path="/Farhan">
-              <Farhan data={vac}/>
+          <Switch>
+            <Route path="/Vaccinationstatus">
+              <Farhan data={vac} />
             </Route>
             <Route path="/hospitalbed">
               <Daniel data={util} />
@@ -98,13 +96,13 @@ function App() {
               <Alex data={icu} />
             </Route>
             <Route path="/">
-            <Yvonne data={localCase} />
-            </Route> 
+              <Yvonne data={localCase} />
+            </Route>
           </Switch>
         </p>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
