@@ -78,17 +78,17 @@ function App() {
         <div class="tab-selection">
           <div>Covid-19</div>
           <div>
-            <NavLink to="/" activeClassName="current">
+            <NavLink to="/home" activeClassName="current">
               Home (Overview)
             </NavLink>
           </div>
           <div>
-            <NavLink to="/Localcases" activeClassName="current">
+            <NavLink to="/localcases" activeClassName="current">
               Local Cases
             </NavLink>
           </div>
           <div>
-            <NavLink to="/Vaccinationstatus" activeClassName="current">
+            <NavLink to="/vaccinationstatus" activeClassName="current">
               Vaccination status
             </NavLink>
           </div>
@@ -107,7 +107,7 @@ function App() {
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/Vaccinationstatus">
+            <Route path="/vaccinationstatus">
               <Farhan data={vac} />
             </Route>
             <Route path="/hospitalbed">
@@ -116,8 +116,11 @@ function App() {
             <Route path="/icu">
               <Alex data={icu} />
             </Route>
-            <Route path="/Localcases">
+            <Route path="/localcases">
               <Yvonne data={localCase} />
+            </Route>
+            <Route path="/home">
+              <Home />
             </Route>
             <Route path="/">
               <Home />

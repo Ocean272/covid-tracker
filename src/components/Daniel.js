@@ -5,14 +5,14 @@ const Daniel = ({ data }) => {
   const [b, setB] = useState("");
   const [searchParamBed] = useState(["as_of_date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
-  const [visible, setVisible] = useState(5);
+  const [visible, setVisible] = useState(6);
 
   const showMoreItems = () => {
-    setVisible((prevValue) => prevValue + 5);
+    setVisible((prevValue) => prevValue + 3);
   };
 
   const showLessItems = () => {
-    setVisible((prevValue) => prevValue - 5);
+    setVisible((prevValue) => prevValue - 3);
   };
 
   function search(data) {
