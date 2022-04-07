@@ -29,6 +29,7 @@ const Yvonne = ({data}) => {
   
       
   return (
+
     <>  
       <h3 className="child-header">Number of Local Cases based on Age Group</h3>
       <table>
