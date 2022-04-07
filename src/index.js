@@ -12,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     {/* <BrowserRouter>
-    <HomePage />
+      <HomePage />
     </BrowserRouter> */}
   </React.StrictMode>,
   document.getElementById("root")

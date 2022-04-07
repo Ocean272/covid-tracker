@@ -5,6 +5,7 @@ import Farhan from "../src/components/Farhan.js";
 import Daniel from "./components/Daniel";
 import API from "./screens/API";
 import Alex from "./components/Alex";
+import Home from "../src/components/Home.js";
 
 /*
   App.js responsibilities:
@@ -70,7 +71,10 @@ function App() {
         <div class="tab-selection">
           <div>Covid-19</div>
           <div>
-            <Link to="/">Home (Cases)</Link>
+            <Link to="/">Home (Overview)</Link>
+          </div>
+          <div>
+            <Link to="/Localcases">Local Cases</Link>
           </div>
           <div>
             <Link to="/Vaccinationstatus">Vaccination status</Link>
@@ -95,8 +99,11 @@ function App() {
             <Route path="/icu">
               <Alex data={icu} />
             </Route>
-            <Route path="/">
+            <Route path="/Localcases">
               <Yvonne data={localCase} />
+            </Route>
+            <Route path="/">
+              <Home />
             </Route>
           </Switch>
         </p>
