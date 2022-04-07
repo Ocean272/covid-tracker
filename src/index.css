@@ -34,6 +34,10 @@ body {
   width: 1000px;
   text-align: center;
   font-size: 35px;
+  color: rgb(255, 255, 255);
+}
+
+a {
   color: rgb(0, 0, 0);
 }
 
@@ -72,4 +76,35 @@ a:hover {
 
 p {
   color: black;
+}
+
+table,
+tr {
+  background-color: orange;
+  margin: 20px 20px;
+  width: 100%;
+}
+
+tr {
+  background-color: beige;
+  width: fit-content;
+}
+
+td {
+  height: 25px;
+  vertical-align: center;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+h3 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 50px;
 }

@@ -34,8 +34,9 @@ const Daniel = ({ data }) => {
   }
 
   return (
-    <div>
-      <div>
+    <>
+      <h3>Daily Adult ICU Bed Utilisation</h3>
+      <table>
         <label htmlFor="search-form">
           <input
             type="search"
@@ -47,31 +48,28 @@ const Daniel = ({ data }) => {
             onChange={(e) => setB(e.target.value)}
           />
         </label>
-      </div>
-      <span> Enter Date</span>
-      <label
-        onChange={(e) => {
-          setFilterParamBed(e.target.value);
-        }}
-        aria-label="Date"
-      >
-        <option value="All"></option>
-      </label>
-      <br />
-      <table>
+        <br />
+        <span> Enter Date</span>
+        <label
+          onChange={(e) => {
+            setFilterParamBed(e.target.value);
+          }}
+          aria-label="Date"
+        >
+          <option value="All"></option>
+        </label>
+        <br />
         <tbody>
-          <h3>Daily Adult ICU Bed Utilisation</h3>
-          <tr>
+          <tr className="table-wrapper">
             <th>Status</th>
             <th>As of Date</th>
             <th>Value</th>
           </tr>
-
           {search(data)
             .slice(0, visible)
             .map((b) => {
               return (
-                <tr key={b._id}>
+                <tr className="table-style" key={b._id}>
                   <td>{b.status}</td>
                   <td>{b.as_of_date}</td>
                   <td>{b.value}</td>
@@ -79,22 +77,11 @@ const Daniel = ({ data }) => {
                 </tr>
               );
             })}
-
-          {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Status : {a.status}</p>
-            <p>As of Date : {a.as_of_date}</p>
-            <p>Value : {a.value}</p>
-            <br />
-          </div>
-        );
-      })} */}
           <button onClick={showMoreItems}>Show more</button>
           <button onClick={showLessItems}>Show less</button>
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 

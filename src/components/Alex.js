@@ -35,7 +35,10 @@ const Alex = ({ data }) => {
 
   return (
     <>
-      <div>
+      <h3>
+        7 days active cases in ICU and deaths, based on Vaccination Status
+      </h3>
+      <table>
         <label htmlFor="search-form">
           <input
             type="search"
@@ -47,23 +50,19 @@ const Alex = ({ data }) => {
             onChange={(e) => setI(e.target.value)}
           />
         </label>
-      </div>
-      <span> Enter Date</span>
-      <label
-        onChange={(e) => {
-          setFilterParamI(e.target.value);
-        }}
-        aria-label="Date"
-      >
-        <option value="All"></option>
-      </label>
-      <br />
-      <table>
+        <br />
+        <span> Enter Date</span>
+        <label
+          onChange={(e) => {
+            setFilterParamI(e.target.value);
+          }}
+          aria-label="Date"
+        >
+          <option value="All"></option>
+        </label>
+        <br />
         <tbody>
-          <h3>
-            7 days active cases in ICU and deaths, based on Vaccination Status
-          </h3>
-          <tr>
+          <tr className="table-wrapper">
             <th>Count of Case in Pecentage</th>
             <th>As of Date</th>
             <th>Vaccination status</th>
@@ -73,7 +72,7 @@ const Alex = ({ data }) => {
             .slice(0, visible)
             .map((i) => {
               return (
-                <tr key={i._id}>
+                <tr className="table-wrapper" key={i._id}>
                   <td>{i.count_of_case}</td>
                   <td>{i.as_of_date}</td>
                   <td>{i.vaccination_status}</td>
@@ -86,17 +85,6 @@ const Alex = ({ data }) => {
           <button onClick={showLessItems}>Show less</button>
         </tbody>
       </table>
-      {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Count of Case : {a.count_of_case}</p>
-            <p>Vaccination Status : {a.vaccination_status}</p>
-            <p>As of Date : {a.as_of_date}</p>
-            <p>Clinical Status : {a.clinicalstatus}</p>
-            <br />
-          </div>
-        );
-      })} */}
     </>
   );
 };
