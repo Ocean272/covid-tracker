@@ -61,10 +61,10 @@ const Farhan = ({ data }) => {
           {search(data).map((v) => {
             return (
               <tr key={v._id}>
-                <td>completed full regimen : {v.completed_full_regimen}</td>
-                <td>Age Group : {v.age}</td>
-                <td>unvaccinated : {v.unvaccinated}</td>
-                <td>At least one dose : {v.at_least_one_dose}</td>
+                <td>{v.completed_full_regimen}</td>
+                <td>{v.age}</td>
+                <td>{v.unvaccinated}</td>
+                <td>{v.at_least_one_dose}</td>
                 <br />
               </tr>
             );

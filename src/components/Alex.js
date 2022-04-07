@@ -55,18 +55,18 @@ const Alex = ({ data }) => {
             7 days active cases in ICU and deaths, based on Vaccination Status
           </h3>
           <tr>
-            <th>Count of Case</th>
+            <th>Count of Case in Pecentage</th>
             <th>As of Date</th>
             <th>Vaccination status</th>
-            <th>Clinical Status</th>
+            <th>Health Status</th>
           </tr>
           {search(data).map((i) => {
             return (
               <tr key={i._id}>
-                <td>No of cases in percentage : {i.count_of_case}</td>
-                <td>Date : {i.as_of_date}</td>
-                <td>Vaccination status: {i.vaccination_status}</td>
-                <td>Health Status : {i.clinicalstatus}</td>
+                <td>{i.count_of_case}</td>
+                <td>{i.as_of_date}</td>
+                <td>{i.vaccination_status}</td>
+                <td>{i.clinicalstatus}</td>
                 <br />
               </tr>
             );

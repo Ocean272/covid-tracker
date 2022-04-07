@@ -61,9 +61,9 @@ const Daniel = ({ data }) => {
           {search(data).map((b) => {
             return (
               <tr key={b._id}>
-                <td>Status: {b.status}</td>
-                <td>Date : {b.as_of_date}</td>
-                <td>Value : {b.value}</td>
+                <td>{b.status}</td>
+                <td>{b.as_of_date}</td>
+                <td>{b.value}</td>
                 <br />
               </tr>
             );
