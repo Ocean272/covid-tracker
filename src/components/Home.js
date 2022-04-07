@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import API from "../screens/API";
 import ART from "../componentsTwo/ART.js";
 import Support from "../componentsTwo/Support";
+import "../index.css";
 
 function Overview() {
   const [data1, setData1] = useState([]);
@@ -16,7 +17,6 @@ function Overview() {
     getAsyncData3();
     getAsyncData4();
   }, []);
-
 
   const getAsyncData1 = async () => {
     const resp = await API.get(
@@ -117,13 +117,14 @@ function Overview() {
             <td>{data4.value}</td>
           </tr>
         </tbody>
-        
       </table>
-
       <br />
-      <ART />
-      <br />
-      <Support />
+      <div className="icons">
+        <br />
+        <ART />
+        <br />
+        <Support />
+      </div>
     </>
   );
 }

@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
 import Yvonne from "./components/Yvonne";
 import Farhan from "../src/components/Farhan.js";
 import Daniel from "./components/Daniel";
 import API from "./screens/API";
 import Alex from "./components/Alex";
 import Home from "../src/components/Home.js";
+import "../src/index.css";
 
 /*
   App.js responsibilities:
@@ -71,19 +78,29 @@ function App() {
         <div class="tab-selection">
           <div>Covid-19</div>
           <div>
-            <Link to="/">Home (Overview)</Link>
+            <NavLink to="/" activeClassName="current">
+              Home (Overview)
+            </NavLink>
           </div>
           <div>
-            <Link to="/Localcases">Local Cases</Link>
+            <NavLink to="/Localcases" activeClassName="current">
+              Local Cases
+            </NavLink>
           </div>
           <div>
-            <Link to="/Vaccinationstatus">Vaccination status</Link>
+            <NavLink to="/Vaccinationstatus" activeClassName="current">
+              Vaccination status
+            </NavLink>
           </div>
           <div>
-            <Link to="/hospitalbed">Hospital Bed</Link>
+            <NavLink to="/hospitalbed" activeClassName="current">
+              Hospital Bed
+            </NavLink>
           </div>
           <div>
-            <Link to="/icu">ICU</Link>
+            <NavLink to="/icu" activeClassName="current">
+              ICU
+            </NavLink>
           </div>
         </div>
         <p class="tab-container">
