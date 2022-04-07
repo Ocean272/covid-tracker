@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const Daniel = ({ data }) => {
-
   const [b, setB] = useState("");
   const [searchParamBed] = useState(["as_of_date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
@@ -30,37 +29,37 @@ const Daniel = ({ data }) => {
       <h3>Daily Adult ICU Bed Utilisation</h3>
       <div>
         <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="DD/MM/YY"
-              value={b}
-              onChange={(e) => setB(e.target.value)}
-            />
-          </label>
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="DD/MM/YY"
+            value={b}
+            onChange={(e) => setB(e.target.value)}
+          />
+        </label>
       </div>
       <span> Enter Date</span>
-        <label
-          onChange={(e) => {
-            setFilterParamBed(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
-        </label>
+      <label
+        onChange={(e) => {
+          setFilterParamBed(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
       <div>
-          {search(data).map((b) => {
+        {search(data).map((b) => {
           return (
             <div key={b._id}>
               <p>Status: {b.status}</p>
               <p>Date : {b.as_of_date}</p>
               <p>Value : {b.value}</p>
               <br />
-              </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </div>
       {/* {data.map((a) => {
         return (

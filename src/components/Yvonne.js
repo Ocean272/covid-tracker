@@ -1,9 +1,8 @@
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 //import { BasePlatform } from 'chart.js';
 
-const Yvonne = ({data}) => {
-
+const Yvonne = ({ data }) => {
   const [r, setR] = useState("");
   const [searchParamLC] = useState(["pr_date"]);
   const [filterParam, setFilterParam] = useState(["All"]);
@@ -25,12 +24,11 @@ const Yvonne = ({data}) => {
       }
     });
   }
-      
+
   return (
     <>
-    <h2>Number of Local Cases based on </h2>
-    <div className="wrapper">
-     
+      <h2>Number of Local Cases based on </h2>
+      <div className="wrapper">
         <label htmlFor="search-form">
           <input
             type="search"
@@ -53,7 +51,6 @@ const Yvonne = ({data}) => {
         <option value="All"></option>
       </label>
       <div>
-
         {search(data).map((a) => {
           return (
             <div key={a._id}>
@@ -64,7 +61,7 @@ const Yvonne = ({data}) => {
             </div>
           );
         })}
-         {/* <BasePlatform
+        {/* <BasePlatform
         data={{
           labels: ["Red","Blue","Yellow","Green","Orange"],
           datasets: [
@@ -128,7 +125,7 @@ const Yvonne = ({data}) => {
         );
       })} */}
     </>
-  )
-}
+  );
+};
 
 export default Yvonne;

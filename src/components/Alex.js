@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
-const Alex = ({data}) => {
-
+const Alex = ({ data }) => {
   const [i, setI] = useState("");
   const [searchParamI] = useState(["as_of_date"]);
   const [filterParamI, setFilterParamI] = useState(["All"]);
@@ -24,34 +23,36 @@ const Alex = ({data}) => {
       }
     });
   }
-  
+
   return (
     <>
-    <h3>7 days active cases in ICU and deaths, based on Vaccination Status</h3>
-    <div>
+      <h3>
+        7 days active cases in ICU and deaths, based on Vaccination Status
+      </h3>
+      <div>
         <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="YYYY-MM-DD"
-              value={i}
-              onChange={(e) => setI(e.target.value)}
-            />
-          </label>
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="YYYY-MM-DD"
+            value={i}
+            onChange={(e) => setI(e.target.value)}
+          />
+        </label>
       </div>
       <span> Enter Date</span>
-        <label
-          onChange={(e) => {
-            setFilterParamI(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
-        </label>
+      <label
+        onChange={(e) => {
+          setFilterParamI(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
       <div>
-          {search(data).map((i) => {
+        {search(data).map((i) => {
           return (
             <div key={i._id}>
               <p>No of cases in percentage : {i.count_of_case}</p>
@@ -59,9 +60,9 @@ const Alex = ({data}) => {
               <p>Vaccination status: {i.vaccination_status}</p>
               <p>Health Status : {i.clinicalstatus}</p>
               <br />
-              </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </div>
       {/* {data.map((a) => {
         return (
@@ -75,7 +76,7 @@ const Alex = ({data}) => {
         );
       })} */}
     </>
-  )
-}
+  );
+};
 
 export default Alex;
