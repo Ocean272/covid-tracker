@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import API from "../screens/API";
-import ART from "../componentsTwo/ART.js";
-import Support from "../componentsTwo/Support";
+import ART from "./ART.js";
+import Support from "./Support";
 import "../index.css";
 
 function Overview() {
