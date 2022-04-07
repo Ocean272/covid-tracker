@@ -4,6 +4,15 @@ import API from '../screens/API'
 
 function Daniel() {
     const [util, setUtil] = useState([]);
+    const [visible, setVisible] = useState(5);
+
+    const showMoreItems = () => {
+      setVisible((prevValue) => prevValue + 5)
+    }
+
+    const showLessItems = () => {
+      setVisible((prevValue) => prevValue - 5)
+    }
 
     const getAsyncData4 = async () => {
         const resp = await API.get("/api/action/datastore_search?resource_id=b5ae6ad5-1272-41f4-a4e5-23308ad6e32d");
@@ -25,7 +34,7 @@ function Daniel() {
                 <th>As of Date</th>
                 <th>Value</th>
               </tr>
-              {util.map((a) => {
+              {util.slice(0, visible).map((a) => {
                 return (
                   <tr key={a._id}>
                     <td>{a.status}</td>
@@ -35,6 +44,8 @@ function Daniel() {
                   </tr>
                 );
               })}
+                <button onClick={showMoreItems}>Show more</button>
+                <button onClick={showLessItems}>Show less</button>
                 </tbody>
               </table>
           )       
