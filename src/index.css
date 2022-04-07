@@ -26,6 +26,7 @@ body {
   margin: auto;
   color: var(--clr-dark);
   padding-top: 45px;
+  padding-bottom: 10px;
   justify-content: space-evenly;
 }
 
@@ -73,7 +74,7 @@ a:hover {
   opacity: 100%;
   color: var(--clr-warning);
   background-color: rgba(245, 245, 245, 0.542);
-  padding: 2.6rem;
+  padding: 1rem;
 }
 
 p {
@@ -82,9 +83,10 @@ p {
 
 table,
 tr {
-  background-color: rgba(255, 166, 0, 0.65);
-  margin: 20px 20px;
+  background-color: rgba(255, 166, 0, 0.598);
+  margin: 0px 20px;
   width: 98%;
+  padding-bottom: 1em;
 }
 
 tr {
