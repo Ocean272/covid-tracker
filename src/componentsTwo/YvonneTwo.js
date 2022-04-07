@@ -6,6 +6,15 @@ import API from '../screens/API'
 
 function Yvonne() {
     const [localCase,setLocalCase] = useState([]);
+    const [visible, setVisible] = useState(5);
+
+    const showMoreItems = () => {
+      setVisible((prevValue) => prevValue + 5)
+    }
+
+    const showLessItems = () => {
+      setVisible((prevValue) => prevValue - 5)
+    }
 
     const getAsyncData1 = async () => {
         const resp = await API.get("/api/action/datastore_search?resource_id=6c14814b-09b7-408e-80c4-db3d393c7c15");
@@ -27,7 +36,7 @@ function Yvonne() {
                 <th>Age Group</th>
                 <th>As of Date</th>
               </tr>
-              {localCase.map((a) => {
+              {localCase.slice(0, visible).map((a) => {
                 return (
                   <tr key={a._id}>
                     <td>{a.count_of_case}</td>
@@ -37,6 +46,8 @@ function Yvonne() {
                   </tr>
                 );
               })}
+                <button onClick={showMoreItems}>Show more</button>
+                <button onClick={showLessItems}>Show less</button>
                 </tbody>
               </table>
           )

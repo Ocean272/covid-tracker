@@ -4,6 +4,15 @@ import API from '../screens/API'
 
 function Alex() {
     const [icu, setIcu] = useState([]);
+    const [visible, setVisible] = useState(5);
+
+    const showMoreItems = () => {
+      setVisible((prevValue) => prevValue + 5)
+    }
+
+    const showLessItems = () => {
+      setVisible((prevValue) => prevValue - 5)
+    }
 
     const getAsyncData3 = async () => {
         const resp = await API.get("/api/action/datastore_search?resource_id=783f0c4c-caf7-4818-8683-760f3d7f0757");
@@ -26,7 +35,7 @@ function Alex() {
                 <th>As of Date</th>
                 <th>Clinical Status</th>
               </tr>
-                {icu.map((a) => {
+                {icu.slice(0, visible).map((a) => {
                   return (
                     <tr key={a._id}>
                       <td>{a.count_of_case}</td>
@@ -37,6 +46,8 @@ function Alex() {
                     </tr>
                   );
                 })}
+                  <button onClick={showMoreItems}>Show more</button>
+                  <button onClick={showLessItems}>Show less</button>
                 </tbody>
               </table>
             )

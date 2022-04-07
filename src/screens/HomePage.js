@@ -4,6 +4,10 @@ import Yvonne from "../componentsTwo/YvonneTwo";
 import Farhan from "../componentsTwo/FarhanTwo";
 import Daniel from "../componentsTwo/DanielTwo";
 import Overview from "../componentsTwo/Home"
+import Art from "../componentsTwo/ART";
+import Support from "../componentsTwo/Support";
+import "../Assets/pills.jpg"
+
 
 function HomePage() {
     return(
@@ -25,6 +29,9 @@ function HomePage() {
                 <div>
                     <Link to ="/Farhan">Discharged</Link>
                 </div>
+                <div>
+                    <Link to ="/Help">Covid 19 support</Link>
+                </div>
             </div>
             <p class="tab-container">
                 <Switch>
@@ -42,6 +49,11 @@ function HomePage() {
                     </Route>
                     <Route path="/Farhan">
                         <Farhan />
+                    </Route>
+                    <Route path="/Help">
+                        <Art />
+                    <br></br>
+                        <Support />
                     </Route>
                 </Switch>
             </p>
