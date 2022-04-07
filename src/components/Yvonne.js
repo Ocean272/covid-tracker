@@ -1,6 +1,7 @@
+//import { BasePlatform } from 'chart.js';
+
 import React from "react";
 import { useState } from "react";
-//import { BasePlatform } from 'chart.js';
 
 const Yvonne = ({ data }) => {
   const [r, setR] = useState("");
