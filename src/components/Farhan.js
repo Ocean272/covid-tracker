@@ -26,8 +26,9 @@ const Farhan = ({ data }) => {
 
   return (
     <>
-      <div>
-        <label htmlFor="search-form">
+      <h3 className="child-header">Number of Vaccinated people based on Age Group</h3> 
+      <table>
+      <label htmlFor="search-form">
           <input
             type="search"
             name="search-form"
@@ -38,7 +39,7 @@ const Farhan = ({ data }) => {
             onChange={(e) => setV(e.target.value)}
           />
         </label>
-      </div>
+      <br />
       <span> Search Age</span>
       <label
         onChange={(e) => {
@@ -48,19 +49,18 @@ const Farhan = ({ data }) => {
       >
         <option value="All"></option>
       </label>
-      <table>
         <tbody>
-          <h3>Number of Vaccinated people based on Age Group</h3>
-          <tr>
+         
+          <tr className="table-wrapper">
             <th>Completed Full Regimen</th>
             <th>Age Group</th>
             <th>Unvaccinated</th>
-            <th>Atleast One Dose</th>
+            <th>At least One Dose</th>
           </tr>
 
           {search(data).map((v) => {
             return (
-              <tr key={v._id}>
+              <tr className="table-style" key={v._id}>
                 <td>{v.completed_full_regimen}</td>
                 <td>{v.age}</td>
                 <td>{v.unvaccinated}</td>

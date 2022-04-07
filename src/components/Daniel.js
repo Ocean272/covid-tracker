@@ -25,9 +25,10 @@ const Daniel = ({ data }) => {
   }
 
   return (
-    <div>
-      <div>
-        <label htmlFor="search-form">
+    <> 
+    <h3>Daily Adult ICU Bed Utilisation</h3>
+      <table>
+      <label htmlFor="search-form">
           <input
             type="search"
             name="search-form"
@@ -38,7 +39,7 @@ const Daniel = ({ data }) => {
             onChange={(e) => setB(e.target.value)}
           />
         </label>
-      </div>
+      <br />
       <span> Enter Date</span>
       <label
         onChange={(e) => {
@@ -49,10 +50,9 @@ const Daniel = ({ data }) => {
         <option value="All"></option>
       </label>
       <br />
-      <table>
         <tbody>
-          <h3>Daily Adult ICU Bed Utilisation</h3>
-          <tr>
+          
+          <tr className="table-wrapper">
             <th>Status</th>
             <th>As of Date</th>
             <th>Value</th>
@@ -60,7 +60,7 @@ const Daniel = ({ data }) => {
 
           {search(data).map((b) => {
             return (
-              <tr key={b._id}>
+              <tr className="table-style" key={b._id}>
                 <td>{b.status}</td>
                 <td>{b.as_of_date}</td>
                 <td>{b.value}</td>
@@ -70,7 +70,7 @@ const Daniel = ({ data }) => {
           })}
         </tbody>
       </table>
-    </div>
+    </>
   );
 };
 

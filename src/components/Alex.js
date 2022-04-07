@@ -26,8 +26,9 @@ const Alex = ({ data }) => {
 
   return (
     <>
-      <div>
-        <label htmlFor="search-form">
+    <h3>7 days active cases in ICU and deaths, based on Vaccination Status</h3>
+      <table>
+      <label htmlFor="search-form">
           <input
             type="search"
             name="search-form"
@@ -38,7 +39,7 @@ const Alex = ({ data }) => {
             onChange={(e) => setI(e.target.value)}
           />
         </label>
-      </div>
+        <br />
       <span> Enter Date</span>
       <label
         onChange={(e) => {
@@ -49,12 +50,8 @@ const Alex = ({ data }) => {
         <option value="All"></option>
       </label>
       <br />
-      <table>
         <tbody>
-          <h3>
-            7 days active cases in ICU and deaths, based on Vaccination Status
-          </h3>
-          <tr>
+          <tr className="table-wrapper">
             <th>Count of Case in Pecentage</th>
             <th>As of Date</th>
             <th>Vaccination status</th>
@@ -62,7 +59,7 @@ const Alex = ({ data }) => {
           </tr>
           {search(data).map((i) => {
             return (
-              <tr key={i._id}>
+              <tr className="table-wrapper" key={i._id}>
                 <td>{i.count_of_case}</td>
                 <td>{i.as_of_date}</td>
                 <td>{i.vaccination_status}</td>
