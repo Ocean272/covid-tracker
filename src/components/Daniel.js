@@ -68,17 +68,6 @@ const Daniel = ({ data }) => {
               </tr>
             );
           })}
-
-          {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Status : {a.status}</p>
-            <p>As of Date : {a.as_of_date}</p>
-            <p>Value : {a.value}</p>
-            <br />
-          </div>
-        );
-      })} */}
         </tbody>
       </table>
     </div>

@@ -73,17 +73,6 @@ const Alex = ({ data }) => {
           })}
         </tbody>
       </table>
-      {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Count of Case : {a.count_of_case}</p>
-            <p>Vaccination Status : {a.vaccination_status}</p>
-            <p>As of Date : {a.as_of_date}</p>
-            <p>Clinical Status : {a.clinicalstatus}</p>
-            <br />
-          </div>
-        );
-      })} */}
     </>
   );
 };
