@@ -34,7 +34,7 @@ body {
   width: 1000px;
   text-align: center;
   font-size: 35px;
-  color: rgb(255, 255, 255);
+  color: var(--clr-dark);
 }
 
 a {
@@ -72,6 +72,8 @@ a:hover {
 .current {
   opacity: 100%;
   color: var(--clr-warning);
+  background-color: rgba(245, 245, 245, 0.542);
+  padding: 2.6rem;
 }
 
 p {
@@ -80,14 +82,15 @@ p {
 
 table,
 tr {
-  background-color: orange;
+  background-color: rgba(255, 166, 0, 0.65);
   margin: 20px 20px;
-  width: 100%;
+  width: 98%;
 }
 
 tr {
   background-color: beige;
   width: fit-content;
+  text-align: center;
 }
 
 td {
