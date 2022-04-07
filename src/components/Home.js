@@ -27,6 +27,7 @@ function Overview() {
       setData1(resp.data.result.records[0]);
     }
   };
+
   const getAsyncData2 = async () => {
     const resp = await API.get(
       "/api/action/datastore_search?resource_id=9ec89dc0-cb6b-4604-aaff-382d5e850206"
