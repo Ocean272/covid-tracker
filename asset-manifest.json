@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/covid-tracker.git/static/css/main.ef56a8d2.css",
+    "main.js": "/covid-tracker.git/static/js/main.666547a8.js",
+    "static/js/787.67bbc453.chunk.js": "/covid-tracker.git/static/js/787.67bbc453.chunk.js",
+    "static/media/pills_background.jpg": "/covid-tracker.git/static/media/pills_background.f0f4f8b676458cef4aad.jpg",
+    "static/media/financial-help.png": "/covid-tracker.git/static/media/financial-help.0609ad6d6985a6f3ed14.png",
+    "static/media/vaccination-centre.png": "/covid-tracker.git/static/media/vaccination-centre.c39830a362e8e0952a04.png",
+    "index.html": "/covid-tracker.git/index.html",
+    "main.ef56a8d2.css.map": "/covid-tracker.git/static/css/main.ef56a8d2.css.map",
+    "main.666547a8.js.map": "/covid-tracker.git/static/js/main.666547a8.js.map",
+    "787.67bbc453.chunk.js.map": "/covid-tracker.git/static/js/787.67bbc453.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef56a8d2.css",
+    "static/js/main.666547a8.js"
+  ]
+}
