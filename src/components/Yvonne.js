@@ -7,6 +7,15 @@ const Yvonne = ({ data }) => {
   const [r, setR] = useState("");
   const [searchParamLC] = useState(["pr_date"]);
   const [filterParam, setFilterParam] = useState(["All"]);
+  const [visible, setVisible] = useState(5);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 5);
+  };
+
+  const showLessItems = () => {
+    setVisible((prevValue) => prevValue - 5);
+  };
 
   function search(data) {
     return data.filter((item) => {
@@ -59,16 +68,18 @@ const Yvonne = ({ data }) => {
               <th>No. of Cases</th>
             </tr>
 
-            {search(data).map((a) => {
-              return (
-                <tr key={a._id}>
-                  <td>Date : {a.pr_date}</td>
-                  <td>Age group : {a.age_group}</td>
-                  <td>No of cases : {a.count_of_case}</td>
-                  <br />
-                </tr>
-              );
-            })}
+            {search(data)
+              .slice(0, visible)
+              .map((a) => {
+                return (
+                  <tr key={a._id}>
+                    <td>Date : {a.pr_date}</td>
+                    <td>Age group : {a.age_group}</td>
+                    <td>No of cases : {a.count_of_case}</td>
+                    <br />
+                  </tr>
+                );
+              })}
             {/* <BasePlatform
         data={{
           labels: ["Red","Blue","Yellow","Green","Orange"],
@@ -132,6 +143,8 @@ const Yvonne = ({ data }) => {
           </div>
         );
       })} */}
+            <button onClick={showMoreItems}>Show more</button>
+            <button onClick={showLessItems}>Show less</button>
           </tbody>
         </table>
       </div>

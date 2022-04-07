@@ -5,6 +5,15 @@ const Alex = ({ data }) => {
   const [i, setI] = useState("");
   const [searchParamI] = useState(["as_of_date"]);
   const [filterParamI, setFilterParamI] = useState(["All"]);
+  const [visible, setVisible] = useState(5);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 5);
+  };
+
+  const showLessItems = () => {
+    setVisible((prevValue) => prevValue - 5);
+  };
 
   function search(data) {
     return data.filter((item) => {
@@ -60,17 +69,21 @@ const Alex = ({ data }) => {
             <th>Vaccination status</th>
             <th>Health Status</th>
           </tr>
-          {search(data).map((i) => {
-            return (
-              <tr key={i._id}>
-                <td>{i.count_of_case}</td>
-                <td>{i.as_of_date}</td>
-                <td>{i.vaccination_status}</td>
-                <td>{i.clinicalstatus}</td>
-                <br />
-              </tr>
-            );
-          })}
+          {search(data)
+            .slice(0, visible)
+            .map((i) => {
+              return (
+                <tr key={i._id}>
+                  <td>{i.count_of_case}</td>
+                  <td>{i.as_of_date}</td>
+                  <td>{i.vaccination_status}</td>
+                  <td>{i.clinicalstatus}</td>
+                  <br />
+                </tr>
+              );
+            })}
+          <button onClick={showMoreItems}>Show more</button>
+          <button onClick={showLessItems}>Show less</button>
         </tbody>
       </table>
       {/* {data.map((a) => {

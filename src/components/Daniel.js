@@ -5,6 +5,15 @@ const Daniel = ({ data }) => {
   const [b, setB] = useState("");
   const [searchParamBed] = useState(["as_of_date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
+  const [visible, setVisible] = useState(5);
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 5);
+  };
+
+  const showLessItems = () => {
+    setVisible((prevValue) => prevValue - 5);
+  };
 
   function search(data) {
     return data.filter((item) => {
@@ -58,16 +67,18 @@ const Daniel = ({ data }) => {
             <th>Value</th>
           </tr>
 
-          {search(data).map((b) => {
-            return (
-              <tr key={b._id}>
-                <td>{b.status}</td>
-                <td>{b.as_of_date}</td>
-                <td>{b.value}</td>
-                <br />
-              </tr>
-            );
-          })}
+          {search(data)
+            .slice(0, visible)
+            .map((b) => {
+              return (
+                <tr key={b._id}>
+                  <td>{b.status}</td>
+                  <td>{b.as_of_date}</td>
+                  <td>{b.value}</td>
+                  <br />
+                </tr>
+              );
+            })}
 
           {/* {data.map((a) => {
         return (
@@ -79,6 +90,8 @@ const Daniel = ({ data }) => {
           </div>
         );
       })} */}
+          <button onClick={showMoreItems}>Show more</button>
+          <button onClick={showLessItems}>Show less</button>
         </tbody>
       </table>
     </div>
