@@ -1,5 +1,3 @@
-//import { BasePlatform } from 'chart.js';
-
 import React from "react";
 import { useState } from "react";
 
@@ -135,6 +133,7 @@ const Yvonne = ({ data }) => {
           </tbody>
         </table>
       </div>
+
     </>
   );
 };
