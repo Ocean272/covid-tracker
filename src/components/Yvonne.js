@@ -29,22 +29,21 @@ const Yvonne = ({data}) => {
   
       
   return (
-    <>
-    <h2>Number of Local Cases based on </h2>
-    <div className="wrapper">
-     
-        <label htmlFor="search-form">
-          <input
-            type="search"
-            name="search-form"
-            id="search-form"
-            className="search-input"
-            placeholder="YYYY-MM-DD"
-            value={r}
-            onChange={(e) => setR(e.target.value)}
-          />
-        </label>
-      </div>
+    <>  
+      <h3 className="child-header">Number of Local Cases based on Age Group</h3>
+      <table>
+      <label htmlFor="search-form">
+        <input
+          type="search"
+          name="search-form"
+          id="search-form"
+          className="search-input"
+          placeholder="YYYY-MM-DD"
+          value={r}
+          onChange={(e) => setR(e.target.value)}
+        />
+      </label>
+      <br />
       <span> Search Date</span>
       <label
         onChange={(e) => {
@@ -54,81 +53,24 @@ const Yvonne = ({data}) => {
       >
         <option value="All"></option>
       </label>
-      <div>
-
-        {search(data).map((a) => {
-          return (
-            <div key={a._id}>
-              <p>Date : {a.pr_date}</p>
-              <p>Age group : {a.age_group}</p>
-              <p>No of cases : {a.count_of_case}</p>
-              <br />
-            </div>
-          );
-        })}
-         {/* <BasePlatform
-        data={{
-          labels: ["Red","Blue","Yellow","Green","Orange"],
-          datasets: [
-            {
-            label: 'no of Cases',
-            data: [2,3,4,5,6,7],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)',
-            ]
-            borderWidth: 1;
-            },
-            {
-            label: 'as of date',
-            data: [3,4,5,6,7,8],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-            ],
-            }
-          ]
-        }}
-        height={400}
-        width={600}
-        options={{maintainAspectRatio: false,
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-              }
-            }
-          ]
-        }}}
-      /> */}
-      </div>
-      {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Count of Case : {a.count_of_case}</p>
-            <p>Age Group : {a.age_group}</p>
-            <p>As of Date : {a.pr_date}</p>
-            <br/>
-          </div>
-        );
-      })} */}
+        <tbody>
+          <tr className="table-wrapper">
+            <th>Date</th>
+            <th>Age Group</th>
+            <th>Number of Cases</th>
+          </tr>
+          {search(data).map((a) => {
+            return (
+              <tr key={a._id}>
+                <td>{a.pr_date}</td>
+                <td>{a.age_group}</td>
+                <td>{a.count_of_case}</td>
+                <br />
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </>
   )
 }

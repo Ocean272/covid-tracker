@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const Daniel = ({ data }) => {
-
   const [b, setB] = useState("");
   const [searchParamBed] = useState(["as_of_date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
@@ -26,53 +25,52 @@ const Daniel = ({ data }) => {
   }
 
   return (
-    <div>
-      <h3>Daily Adult ICU Bed Utilisation</h3>
-      <div>
-        <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="DD/MM/YY"
-              value={b}
-              onChange={(e) => setB(e.target.value)}
-            />
-          </label>
-      </div>
-      <span> Enter Date</span>
-        <label
-          onChange={(e) => {
-            setFilterParamBed(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
+    <> 
+    <h3>Daily Adult ICU Bed Utilisation</h3>
+      <table>
+      <label htmlFor="search-form">
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="DD/MM/YY"
+            value={b}
+            onChange={(e) => setB(e.target.value)}
+          />
         </label>
-      <div>
+      <br />
+      <span> Enter Date</span>
+      <label
+        onChange={(e) => {
+          setFilterParamBed(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
+      <br />
+        <tbody>
+          
+          <tr className="table-wrapper">
+            <th>Status</th>
+            <th>As of Date</th>
+            <th>Value</th>
+          </tr>
+
           {search(data).map((b) => {
-          return (
-            <div key={b._id}>
-              <p>Status: {b.status}</p>
-              <p>Date : {b.as_of_date}</p>
-              <p>Value : {b.value}</p>
-              <br />
-              </div>
+            return (
+              <tr className="table-style" key={b._id}>
+                <td>{b.status}</td>
+                <td>{b.as_of_date}</td>
+                <td>{b.value}</td>
+                <br />
+              </tr>
             );
           })}
-      </div>
-      {/* {data.map((a) => {
-        return (
-          <div key={a._id}>
-            <p>Status : {a.status}</p>
-            <p>As of Date : {a.as_of_date}</p>
-            <p>Value : {a.value}</p>
-            <br />
-          </div>
-        );
-      })} */}
-    </div>
+        </tbody>
+      </table>
+    </>
   );
 };
 

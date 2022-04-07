@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const Farhan = ({ data }) => {
-
   const [v, setV] = useState("");
   const [searchParamVac] = useState(["age"]);
   const [filterParamV, setFilterParamV] = useState(["All"]);
@@ -25,61 +24,53 @@ const Farhan = ({ data }) => {
     });
   }
 
-
   return (
     <>
-      <h2>Number of Vaccinated people based on Age Group</h2>
-      <div>
-        <label htmlFor="search-form">
-            <input
-              type="search"
-              name="search-form"
-              id="search-form"
-              className="search-input"
-              placeholder="Enter Age"
-              value={v}
-              onChange={(e) => setV(e.target.value)}
-            />
-          </label>
-      </div>
-      <span> Search Age</span>
-        <label
-          onChange={(e) => {
-            setFilterParamV(e.target.value);
-          }}
-          aria-label="Date"
-        >
-          <option value="All"></option>
+      <h3 className="child-header">Number of Vaccinated people based on Age Group</h3> 
+      <table>
+      <label htmlFor="search-form">
+          <input
+            type="search"
+            name="search-form"
+            id="search-form"
+            className="search-input"
+            placeholder="Enter Age"
+            value={v}
+            onChange={(e) => setV(e.target.value)}
+          />
         </label>
-      <div>
+      <br />
+      <span> Search Age</span>
+      <label
+        onChange={(e) => {
+          setFilterParamV(e.target.value);
+        }}
+        aria-label="Date"
+      >
+        <option value="All"></option>
+      </label>
+        <tbody>
+         
+          <tr className="table-wrapper">
+            <th>Completed Full Regimen</th>
+            <th>Age Group</th>
+            <th>Unvaccinated</th>
+            <th>At least One Dose</th>
+          </tr>
+
           {search(data).map((v) => {
-          return (
-            <div key={v._id}>
-              <p>completed full regimen : {v.completed_full_regimen}</p>
-              <p>Age Group : {v.age}</p>
-              <p>unvaccinated : {v.unvaccinated}</p>
-              <p>At least one dose : {v.at_least_one_dose}</p>
-              <br />
-              </div>
+            return (
+              <tr className="table-style" key={v._id}>
+                <td>{v.completed_full_regimen}</td>
+                <td>{v.age}</td>
+                <td>{v.unvaccinated}</td>
+                <td>{v.at_least_one_dose}</td>
+                <br />
+              </tr>
             );
           })}
-      </div>
-      {/* <form>
-        <input type="text" placeholder="Search for date" />
-        <button>Search</button>
-      </form>
-      {data.map((v) => {
-        return (
-          <div key={v._id}>
-            <p>completed full regimen : {v.completed_full_regimen}</p>
-            <p>Age Group : {v.age}</p>
-            <p>unvaccinated : {v.unvaccinated}</p>
-            <p>Unvaccinated : {v.unvaccinated}</p>
-            <p>At least one dose : {v.at_least_one_dose}</p>
-            <br />
-          </div>
-        );
-      })} */}
+        </tbody>
+      </table>
     </>
   );
 };
