@@ -1,9 +1,11 @@
+
 :root {
   --clr-primary: rgb(52, 113, 150);
   --clr-light: #f4f4f4;
   --clr-dark: black;
   --clr-warning: rgb(103, 36, 36);
 }
+
 
 body {
   margin: 0;
@@ -27,6 +29,7 @@ body {
   color: var(--clr-dark);
   padding-top: 45px;
   justify-content: space-evenly;
+
 }
 
 .tab-selection > div {
@@ -34,6 +37,10 @@ body {
   width: 1000px;
   text-align: center;
   font-size: 35px;
+  color: rgb(255, 255, 255);
+}
+
+a {
   color: rgb(0, 0, 0);
 }
 
@@ -73,3 +80,36 @@ a:hover {
 p {
   color: black;
 }
+
+table,
+tr {
+  background-color: orange;
+  margin: 20px 20px;
+  width:100%;
+}
+
+tr {
+  background-color: beige;
+  width:fit-content;
+}
+
+td {
+  height: 25px;
+  vertical-align: center;
+ 
+}
+
+label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+h3 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
