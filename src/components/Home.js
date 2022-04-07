@@ -11,6 +11,13 @@ function Overview() {
   const [data3, setData3] = useState([]);
   const [data4, setData4] = useState([]);
 
+  useEffect(() => {
+    getAsyncData1();
+    getAsyncData3();
+    getAsyncData4();
+    getAsyncData2();
+  }, []);
+
   const getAsyncData1 = async () => {
     const resp = await API.get(
       "/api/action/datastore_search?resource_id=6c14814b-09b7-408e-80c4-db3d393c7c15"
@@ -20,9 +27,6 @@ function Overview() {
       setData1(resp.data.result.records[0]);
     }
   };
-  useEffect(() => {
-    getAsyncData1();
-  }, []);
 
   const getAsyncData3 = async () => {
     const resp = await API.get(
@@ -33,9 +37,6 @@ function Overview() {
       setData3(resp.data.result.records[0]);
     }
   };
-  useEffect(() => {
-    getAsyncData3();
-  }, []);
 
   const getAsyncData4 = async () => {
     const resp = await API.get(
@@ -46,9 +47,6 @@ function Overview() {
       setData4(resp.data.result.records[0]);
     }
   };
-  useEffect(() => {
-    getAsyncData4();
-  }, []);
 
   const getAsyncData2 = async () => {
     const resp = await API.get(
@@ -59,9 +57,6 @@ function Overview() {
       setData2(resp.data.result.records[0]);
     }
   };
-  useEffect(() => {
-    getAsyncData2();
-  }, []);
 
   return (
     <>
