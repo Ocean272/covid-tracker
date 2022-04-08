@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/covid-tracker/index.html/static/css/main.46e17f03.css",
-    "main.js": "/covid-tracker/index.html/static/js/main.8113374e.js",
-    "static/js/787.67bbc453.chunk.js": "/covid-tracker/index.html/static/js/787.67bbc453.chunk.js",
-    "static/media/pills_background.jpg": "/covid-tracker/index.html/static/media/pills_background.f0f4f8b676458cef4aad.jpg",
-    "static/media/financial-help.png": "/covid-tracker/index.html/static/media/financial-help.0609ad6d6985a6f3ed14.png",
-    "static/media/vaccination-centre.png": "/covid-tracker/index.html/static/media/vaccination-centre.c39830a362e8e0952a04.png",
-    "index.html": "/covid-tracker/index.html/index.html",
-    "main.46e17f03.css.map": "/covid-tracker/index.html/static/css/main.46e17f03.css.map",
-    "main.8113374e.js.map": "/covid-tracker/index.html/static/js/main.8113374e.js.map",
-    "787.67bbc453.chunk.js.map": "/covid-tracker/index.html/static/js/787.67bbc453.chunk.js.map"
+    "main.css": "/covid-tracker/static/css/main.e2bbfdb7.css",
+    "main.js": "/covid-tracker/static/js/main.a9ba8ff3.js",
+    "static/js/787.67bbc453.chunk.js": "/covid-tracker/static/js/787.67bbc453.chunk.js",
+    "static/media/pills_background.jpg": "/covid-tracker/static/media/pills_background.f0f4f8b676458cef4aad.jpg",
+    "static/media/financial-help.png": "/covid-tracker/static/media/financial-help.0609ad6d6985a6f3ed14.png",
+    "static/media/vaccination-centre.png": "/covid-tracker/static/media/vaccination-centre.c39830a362e8e0952a04.png",
+    "index.html": "/covid-tracker/index.html",
+    "main.e2bbfdb7.css.map": "/covid-tracker/static/css/main.e2bbfdb7.css.map",
+    "main.a9ba8ff3.js.map": "/covid-tracker/static/js/main.a9ba8ff3.js.map",
+    "787.67bbc453.chunk.js.map": "/covid-tracker/static/js/787.67bbc453.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.46e17f03.css",
-    "static/js/main.8113374e.js"
+    "static/css/main.e2bbfdb7.css",
+    "static/js/main.a9ba8ff3.js"
   ]
 }
