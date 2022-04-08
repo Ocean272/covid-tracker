@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Farhan = ({ data }) => {
+const Vac = ({ data }) => {
   const [v, setV] = useState("");
   const [searchParamVac] = useState(["age"]);
   const [filterParamV, setFilterParamV] = useState(["All"]);
@@ -75,4 +75,4 @@ const Farhan = ({ data }) => {
   );
 };
 
-export default Farhan;
+export default Vac;

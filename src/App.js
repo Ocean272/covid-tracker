@@ -5,11 +5,11 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import Yvonne from "./components/Yvonne";
-import Farhan from "../src/components/Farhan.js";
-import Daniel from "./components/Daniel";
+import Localcase from "./components/Localcase.js";
+import Vac from "./components/Vac.js";
+import Util from "./components/Util.js";
 import API from "./screens/API";
-import Alex from "./components/Alex";
+import Icu from "./components/Icu.js";
 import Home from "../src/components/Home.js";
 import "../src/index.css";
 
@@ -107,16 +107,16 @@ function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/vaccinationstatus">
-              <Farhan data={vac} />
+              <Vac data={vac} />
             </Route>
             <Route path="/hospitalbed">
-              <Daniel data={util} />
+              <Util data={util} />
             </Route>
             <Route path="/icu">
-              <Alex data={icu} />
+              <Icu data={icu} />
             </Route>
             <Route path="/localcases">
-              <Yvonne data={localCase} />
+              <Localcase data={localCase} />
             </Route>
             <Route path="/home">
               <Home />

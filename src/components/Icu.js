@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-//import { BasePlatform } from 'chart.js';
 
-const Yvonne = ({ data }) => {
-  const [r, setR] = useState("");
-  const [searchParamLC] = useState(["pr_date"]);
-  const [filterParam, setFilterParam] = useState(["All"]);
+const Icu = ({ data }) => {
+  const [i, setI] = useState("");
+  const [searchParamI] = useState(["as_of_date"]);
+  const [filterParamI, setFilterParamI] = useState(["All"]);
   const [visible, setVisible] = useState(5);
 
   const showMoreItems = () => {
@@ -18,16 +17,16 @@ const Yvonne = ({ data }) => {
 
   function search(data) {
     return data.filter((item) => {
-      if (item.pr_date == filterParam) {
-        return searchParamLC.some((newItem) => {
+      if (item.as_of_date == filterParamI) {
+        return searchParamI.some((newItem) => {
           return (
-            item[newItem].toString().toLowerCase().indexOf(r.toLowerCase()) > -1
+            item[newItem].toString().toLowerCase().indexOf(i.toLowerCase()) > -1
           );
         });
-      } else if (filterParam == "All") {
-        return searchParamLC.some((newItem) => {
+      } else if (filterParamI == "All") {
+        return searchParamI.some((newItem) => {
           return (
-            item[newItem].toString().toLowerCase().indexOf(r.toLowerCase()) > -1
+            item[newItem].toString().toLowerCase().indexOf(i.toLowerCase()) > -1
           );
         });
       }
@@ -36,7 +35,9 @@ const Yvonne = ({ data }) => {
 
   return (
     <>
-      <h3 className="child-header">Number of Local Cases based on Age Group</h3>
+      <h3>
+        7 days active cases in ICU and deaths, based on Vaccination Status
+      </h3>
       <table>
         <label htmlFor="search-form">
           <input
@@ -45,34 +46,37 @@ const Yvonne = ({ data }) => {
             id="search-form"
             className="search-input"
             placeholder="YYYY-MM-DD"
-            value={r}
-            onChange={(e) => setR(e.target.value)}
+            value={i}
+            onChange={(e) => setI(e.target.value)}
           />
         </label>
         <br />
-        <span> Search Date</span>
+        <span> Enter Date</span>
         <label
           onChange={(e) => {
-            setFilterParam(e.target.value);
+            setFilterParamI(e.target.value);
           }}
           aria-label="Date"
         >
           <option value="All"></option>
         </label>
+        <br />
         <tbody>
           <tr className="table-wrapper">
-            <th>Date</th>
-            <th>Age Group</th>
-            <th>Number of Cases</th>
+            <th>Count of Case in Pecentage</th>
+            <th>As of Date</th>
+            <th>Vaccination status</th>
+            <th>Health Status</th>
           </tr>
           {search(data)
             .slice(0, visible)
-            .map((a) => {
+            .map((i) => {
               return (
-                <tr key={a._id}>
-                  <td>{a.pr_date}</td>
-                  <td>{a.age_group}</td>
-                  <td>{a.count_of_case}</td>
+                <tr className="table-wrapper" key={i._id}>
+                  <td>{i.count_of_case}</td>
+                  <td>{i.as_of_date}</td>
+                  <td>{i.vaccination_status}</td>
+                  <td>{i.clinicalstatus}</td>
                   <br />
                 </tr>
               );
@@ -85,4 +89,4 @@ const Yvonne = ({ data }) => {
   );
 };
 
-export default Yvonne;
+export default Icu;

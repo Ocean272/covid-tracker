@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Daniel = ({ data }) => {
+const Util = ({ data }) => {
   const [b, setB] = useState("");
   const [searchParamBed] = useState(["as_of_date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
@@ -85,4 +85,4 @@ const Daniel = ({ data }) => {
   );
 };
 
-export default Daniel;
+export default Util;
