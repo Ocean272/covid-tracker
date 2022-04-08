@@ -2,7 +2,7 @@
   "name": "covid-tracker-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ocean272.github.io/covid-tracker/index.html",
+  "homepage": "https://Ocean272.github.io/covid-tracker/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
