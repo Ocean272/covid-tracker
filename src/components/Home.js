@@ -40,7 +40,7 @@ function Overview() {
 
   const getAsyncData3 = async () => {
     const resp = await API.get(
-      "/api/action/datastore_search?resource_id=783f0c4c-caf7-4818-8683-760f3d7f0757"
+      "/api/action/datastore_search?resource_id=b80ebe54-72a6-407c-8691-8cafb80c81a9"
     );
     if (resp.status === 200) {
       console.log(resp);
@@ -50,7 +50,7 @@ function Overview() {
 
   const getAsyncData4 = async () => {
     const resp = await API.get(
-      "/api/action/datastore_search?resource_id=b5ae6ad5-1272-41f4-a4e5-23308ad6e32d"
+      "/api/action/datastore_search?resource_id=d6fa745b-4e22-4853-b3e7-53bdbf403c09"
     );
     if (resp.status === 200) {
       console.log(resp);
@@ -92,29 +92,24 @@ function Overview() {
         <tbody>
           <h3>Number in ICU Overview</h3>
           <tr>
-            <th>No of cases in percentage</th>
             <th>Date</th>
-            <th>Vaccination status</th>
-            <th>Health Status</th>
+            <th>New ICU Admissions</th>
           </tr>
           <tr key={data3._id}>
-            <td>{data3.count_of_case}</td>
-            <td>{data3.as_of_date}</td>
-            <td>{data3.vaccination_status}</td>
-            <td>{data3.clinicalstatus}</td>
+            <td>{data3.date}</td>
+            <td>{data3.new_icu_admissions}</td>
           </tr>
         </tbody>
         <tbody>
           <h3>Hospitalization Overview</h3>
           <tr>
-            <th>Status</th>
-            <th>As of Date</th>
-            <th>Value</th>
+            <th>Date</th>
+            <th>New Hospital Admissions</th>
           </tr>
           <tr key={data4._id}>
-            <td>{data4.status}</td>
-            <td>{data4.as_of_date}</td>
-            <td>{data4.value}</td>
+            <td>{data4.date}</td>
+            <td>{data4.new_hospital_admissions}</td>
+                  
           </tr>
         </tbody>
       </table>

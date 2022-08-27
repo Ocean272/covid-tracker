@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Icu = ({ data }) => {
   const [i, setI] = useState("");
-  const [searchParamI] = useState(["as_of_date"]);
+  const [searchParamI] = useState(["date"]);
   const [filterParamI, setFilterParamI] = useState(["All"]);
   const [visible, setVisible] = useState(5);
 
@@ -36,7 +36,7 @@ const Icu = ({ data }) => {
   return (
     <>
       <h3>
-        7 days active cases in ICU and deaths, based on Vaccination Status
+        New COVID-19 ICU Admissions
       </h3>
       <table>
         <label htmlFor="search-form">
@@ -63,20 +63,16 @@ const Icu = ({ data }) => {
         <br />
         <tbody>
           <tr className="table-wrapper">
-            <th>Count of Case in Pecentage</th>
-            <th>As of Date</th>
-            <th>Vaccination status</th>
-            <th>Health Status</th>
+            <th>Date</th>
+            <th>New ICU Admission</th>
           </tr>
           {search(data)
             .slice(0, visible)
             .map((i) => {
               return (
                 <tr className="table-wrapper" key={i._id}>
-                  <td>{i.count_of_case}</td>
-                  <td>{i.as_of_date}</td>
-                  <td>{i.vaccination_status}</td>
-                  <td>{i.clinicalstatus}</td>
+                  <td>{i.date}</td>
+                  <td>{i.new_icu_admissions}</td>
                   <br />
                 </tr>
               );

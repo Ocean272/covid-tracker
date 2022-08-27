@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Util = ({ data }) => {
   const [b, setB] = useState("");
-  const [searchParamBed] = useState(["as_of_date"]);
+  const [searchParamBed] = useState(["date"]);
   const [filterParamBed, setFilterParamBed] = useState(["All"]);
   const [visible, setVisible] = useState(6);
 
@@ -43,7 +43,7 @@ const Util = ({ data }) => {
             name="search-form"
             id="search-form"
             className="search-input"
-            placeholder="DD/MM/YY"
+            placeholder="YYYY/MM/DD"
             value={b}
             onChange={(e) => setB(e.target.value)}
           />
@@ -61,18 +61,18 @@ const Util = ({ data }) => {
         <br />
         <tbody>
           <tr className="table-wrapper">
-            <th>Status</th>
-            <th>As of Date</th>
-            <th>Value</th>
+            <th>Date</th>
+            <th>New Hospital Admissions</th>
+            <th></th>
           </tr>
           {search(data)
             .slice(0, visible)
             .map((b) => {
               return (
                 <tr className="table-style" key={b._id}>
-                  <td>{b.status}</td>
-                  <td>{b.as_of_date}</td>
-                  <td>{b.value}</td>
+                  <td>{b.date}</td>
+                  <td>{b.new_hospital_admissions}</td>
+                  
                   <br />
                 </tr>
               );
